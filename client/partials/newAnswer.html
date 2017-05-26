@@ -1,0 +1,26 @@
+<div ng-controller="QuestionsController as QC">
+  <div ng-controller="AnswersController as AC">
+
+    <div ng-init="UC.check(); QC.show()">
+      <a href="#" ng-click="UC.logout()">Logout</a>
+    </div>
+    <hr>
+
+    <h1>{{ QC.question.question }}</h1>
+    <h2>{{ QC.question.description }}</h2>
+    <a href="#!/questions/{{QC.question._id}}" >Back to question</a>
+    <br><br>
+
+    <ul>
+      <li ng-repeat='error in AC.errors'>{{error}}</li>
+    </ul>
+    <form ng-submit="AC.create(AC.newAnswer)">
+      <label>Your Answer <input type="text" ng-model="AC.newAnswer.answer"></label><br><br>
+      <label>Supporting details for your answer (optional) <input type="text" ng-model="AC.newAnswer.detail"></label><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <a href="#!/questions/{{QC.question._id}}">Cancel</a>
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Store</title>
+    <script src='angular/angular.js'></script>
+    <script src='angular-route/angular-route.js'></script>
+    <script src="angular-cookies/angular-cookies.js"></script>
+    <script src='config.js'></script>
+    <script src='controllers/UsersController.js'></script>
+    <script src='factories/userFactory.js'></script>
+    <script src='controllers/QuestionsController.js'></script>
+    <script src='factories/questionFactory.js'></script>
+    <script src='controllers/AnswersController.js'></script>
+    <script src='factories/answerFactory.js'></script>
+  </head>
+  <body>
+    <a href="#!/">Home</a>
+    <hr>
+    <div ng-view>
+    </div>
+  </body>
+</html>
