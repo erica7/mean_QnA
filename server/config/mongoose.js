@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/loginReg');
+mongoose.connect('mongodb://localhost/mean_QnA');
 
 mongoose.Promise = global.Promise;
 
