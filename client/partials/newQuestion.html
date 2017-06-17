@@ -2,14 +2,8 @@
 
   <div class="row" ng-init="UC.check(); QC.show()">
     <a href="#!/"><button type="button" class="btn" name="button">Home</button></a>
-  </div>
-
-  <div class="row">
     <a href="#" ng-click="UC.logout()"><button type="button" class="btn" name="button">Logout</button></a>
   </div>
-
-
-
 
   <h1>New Question</h1>
 
@@ -18,11 +12,30 @@
   </ul>
 
   <form ng-submit="QC.create(QC.newQuestion)">
-    <label>Question <input type="text" class="form-control" ng-model="QC.newQuestion.question"></label><br><br>
-    <label>Description (optional) <input type="text" class="form-control" ng-model="QC.newQuestion.description"></label><br><br>
-    <input class="btn" type="submit" value="Submit">
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="heading">Question</h4>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" ng-model="QC.newQuestion.question">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="heading">Description (optional)</h4>
+      </div>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" ng-model="QC.newQuestion.description">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-7">
+        <input class="btn" type="submit" value="Submit">
+        <a href="#!/" ><button type="button" class="btn" name="button">Cancel</button></a>
+      </div>
+    </div>
   </form>
-  <br>
-  <a href="#!/"><button type="button" class="btn" name="button">Cancel</button></a>
 
 </div>

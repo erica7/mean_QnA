@@ -1,10 +1,20 @@
 <div class="container-fluid">
 
+  <div class="row text-center">
+    <h1>Welcome to Q n' A!</h1>
+    <h4><em>This site is in alpha stage of development. It is not an official release.</em></h4>
+    <h4><em>Accordingly, please <u>do not enter any sensitive information</u> such as a legitimate e-mail address or passwords used elsewhere.</em></h4>
+  </div>
+
   <div class="row">
-    <h2>Register</h2>
-    <ul>
-      <li ng-repeat='error in UC.registrationErrors'>{{error}}</li>
-    </ul>
+    <div class="col-sm-4">
+      <h2 class="heading">Register</h2>
+    </div>
+    <div class="col-sm-8">
+      <ul class=" align-text-bottom align-bottom">
+        <li  class=" align-text-bottom align-bottom" ng-repeat='error in UC.registrationErrors'>{{error}}</li>
+      </ul>
+    </div>
   </div>
 
   <div class="row">
@@ -47,10 +57,14 @@
   </div>
 
   <div class="row">
-    <h2>Log In</h2>
-    <ul>
-      <li ng-repeat='error in UC.loginErrors'>{{error}}</li>
-    </ul>
+    <div class="col-sm-4">
+      <h2 class="heading">Log In</h2>
+    </div>
+    <div class="col-sm-8 align-text-bottom align-bottom">
+      <ul>
+        <li ng-repeat='error in UC.loginErrors'>{{error}}</li>
+      </ul>
+    </div>
   </div>
 
   <div class="row">

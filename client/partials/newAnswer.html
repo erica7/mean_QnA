@@ -3,27 +3,74 @@
 
     <div class="row" ng-init="UC.check(); QC.show()">
       <a href="#!/"><button type="button" class="btn" name="button">Home</button></a>
-    </div>
-
-    <div class="row">
       <a href="#" ng-click="UC.logout()"><button type="button" class="btn" name="button">Logout</button></a>
     </div>
 
-    <h1>{{ QC.question.question }}</h1>
-    <h2>{{ QC.question.description }}</h2>
-    <a href="#!/questions/{{QC.question._id}}" ><button type="button" class="btn" name="button">Back to Question</button></a>
-    <br><br>
+    <h1>New Answer</h1>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="heading">Question</h4>
+      </div>
+      <div class="col-sm-7">
+        <p>{{ QC.question.question }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="heading">Description</h4>
+      </div>
+      <div class="col-sm-7">
+        <p>{{ QC.question.description }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="heading"></h4>
+      </div>
+      <div class="col-sm-7">
+        <a href="#!/questions/{{QC.question._id}}" ><button type="button" class="btn" name="button">Back to Question</button></a>
+      </div>
+    </div>
+
 
     <ul>
       <li ng-repeat='error in AC.errors'>{{error}}</li>
     </ul>
+
     <form ng-submit="AC.create(AC.newAnswer)">
-      <label>Your Answer <input type="text" class="form-control" ng-model="AC.newAnswer.answer"></label><br><br>
-      <label>Supporting details for your answer (optional) <input type="text" class="form-control" ng-model="AC.newAnswer.detail"></label><br><br>
-      <input class="btn" type="submit" value="Submit">
+
+
+      <div class="row">
+        <div class="col-sm-3">
+          <h4 class="heading">Your Answer</h4>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" ng-model="AC.newAnswer.answer">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <h4 class="heading">Supporting details for your answer (optional)</h4>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" ng-model="AC.newAnswer.detail">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-7">
+          <input class="btn" type="submit" value="Submit">
+          <a href="#!/questions/{{QC.question._id}}"><button type="button" class="btn" name="button">Cancel</button></a>
+        </div>
+      </div>
+
     </form>
-    <br>
-    <a href="#!/questions/{{QC.question._id}}"><button type="button" class="btn" name="button">Cancel</button></a>
+
+
 
   </div>
 </div>
