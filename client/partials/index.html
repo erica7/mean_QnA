@@ -1,20 +1,85 @@
-<h2>Register</h2>
-<ul>
-  <li ng-repeat='error in UC.registrationErrors'>{{error}}</li>
-</ul>
-<form ng-submit="UC.create(UC.newUser)">
-  Name: <input type="text" ng-model="UC.newUser.name"><br>
-  Password: <input type="password" ng-model="UC.newUser.password"><br> 
-  Password confirmation: <input type="password" ng-model="UC.newUser.password_confirmation"><br>
-  <input type="submit" value="Register">
-</form>
+<div class="container-fluid">
 
-<h2>Log In</h2>
-<ul>
-  <li ng-repeat='error in UC.loginErrors'>{{error}}</li>
-</ul>
-<form ng-submit="UC.login(UC.checkUser)">
-  Name: <input type="text" ng-model="UC.checkUser.name"><br>
-  Password: <input type="password" ng-model="UC.checkUser.password"><br>
-  <input type="submit" value="Log In">
-</form>
+  <div class="row">
+    <h2>Register</h2>
+    <ul>
+      <li ng-repeat='error in UC.registrationErrors'>{{error}}</li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <form ng-submit="UC.create(UC.newUser)">
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-2">
+          <h4 class="heading">Name</h4>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="UC.newUser.name">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-2">
+          <h4 class="heading">Password</h4>
+        </div>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" ng-model="UC.newUser.password">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-2">
+          <h4 class="heading">Password Confirmation</h4>
+        </div>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" ng-model="UC.newUser.password_confirmation">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8 heading">
+          <input class="btn" type="submit" value="Register">
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="row">
+    <h2>Log In</h2>
+    <ul>
+      <li ng-repeat='error in UC.loginErrors'>{{error}}</li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <form ng-submit="UC.login(UC.checkUser)">
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-2">
+          <h4 class="heading">Name</h4>
+        </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" ng-model="UC.checkUser.name">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-2">
+          <h4 class="heading">Password</h4>
+        </div>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" ng-model="UC.checkUser.password">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8 heading">
+          <input class="btn" type="submit" value="Log In">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

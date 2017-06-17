@@ -1,22 +1,59 @@
 <div ng-controller="QuestionsController as QC">
   <div ng-controller="AnswersController as AC">
 
-    <div ng-init="UC.check(); QC.show()">
-      <a href="#" ng-click="UC.logout()">Logout</a>
+    <div class="row" ng-init="UC.check(); QC.show()">
+      <a href="#!/"><button type="button" class="btn" name="button">Home</button></a>
     </div>
-    <hr>
 
-    <h1>{{ QC.question.question }}</h1>
-    <h2>{{ QC.question.description }}</h2>
-    <a href="#!/questions/{{QC.question._id}}/new_answer" >Answer this question</a>
-
-    <div ng-repeat="answer in QC.question.answers | orderBy:'-likes'">
-      <h3>{{ answer.user.name }}'s answer</h3>
-      <p>&nbsp;&nbsp;&nbsp;Answer: {{ answer.answer }}</p>
-      <p ng-if="answer.detail">&nbsp;&nbsp;&nbsp;Detail: {{ answer.detail }}</p>
-      <p>&nbsp;&nbsp;&nbsp;{{ answer.likes }} likes</p>
-      <p>&nbsp;&nbsp;&nbsp;<button ng-click="QC.addLike(answer._id)">Like</button></p>
+    <div class="row">
+      <a href="#" ng-click="UC.logout()"><button type="button" class="btn" name="button">Logout</button></a>
     </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h4 class="heading">Question</h4>
+      </div>
+      <div class="col-sm-6">
+        <p>{{ QC.question.question }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h4 class="heading">Description</h4>
+      </div>
+      <div class="col-sm-6">
+        <p>{{ QC.question.description }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h4 class="heading">Answer</h4>
+      </div>
+      <div class="col-sm-6">
+        <a href="#!/questions/{{QC.question._id}}/new_answer"><button type="button" class="btn" name="button">Answer this Question</button></a>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <th></th>
+        <th>Answer</th>
+        <th>Detail</th>
+        <th>Likes</th>
+        <th>Like</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="answer in QC.question.answers | orderBy:'-likes'">
+          <td>{{ answer.user.name }}'s answer</td>
+          <td>{{ answer.answer }}</td>
+          <td>{{ answer.detail }}</td>
+          <td>{{ answer.likes }}</td>
+          <td><button ng-click="QC.addLike(answer._id)" type="button" class="btn" name="button">Like</button></td>
+        </tr>
+      </tbody>
+    </table>
 
   </div>
 </div>

@@ -1,36 +1,48 @@
-<div ng-controller="QuestionsController as QC">
+<div class="container-fluid" ng-controller="QuestionsController as QC">
 
-  <div ng-init="UC.check()">
-    <a href="#" ng-click="UC.logout()">Logout</a>
+  <div class="row" ng-init="UC.check()">
+    <a href="#!/"><button type="button" class="btn" name="button">Home</button></a>
   </div>
-  <hr>
+
+  <div class="row">
+    <a href="#" ng-click="UC.logout()"><button type="button" class="btn" name="button">Logout</button></a>
+  </div>
 
   <ul ng-init="QC.index(); AC.index()">
     <li ng-repeat='error in QC.errors'>{{error}}</li>
   </ul>
 
-  <h1>Hi {{ UC.currentUser.name }}</h1>
+  <h1>Hi, {{ UC.currentUser.name }}.</h1>
 
-  <a href="#!/new_question">Add a Question</a>
-  <br>
-  <br>
-
-  <div>
-    <label>Filter: <input type="text" ng-model="filterName.question"></label>
+  <div class="row">
+    <div class="col-sm-2">
+      <h3 class="heading">Ask</h3>
+    </div>
+    <div class="col-sm-6">
+      <a href="#!/new_question"><button type="button" class="btn" name="button">Ask a Question</button></a>
+    </div>
   </div>
-  <br>
 
-  <table>
+  <div class="row">
+    <div class="col-sm-2">
+      <h3 class="heading">Filter</h3>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" ng-model="filterName.question">
+    </div>
+  </div>
+
+  <table class="table">
     <thead>
-      <th>&nbsp;Question&nbsp;</th>
-      <th>&nbsp;Answers&nbsp;</th>
-      <th>&nbsp;Action&nbsp;</th>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Action</th>
     </thead>
     <tbody>
       <tr ng-repeat="question in QC.questions | filter:filterName:strict">
-        <td>&nbsp;{{ question.question }}&nbsp;</td>
-        <td>&nbsp;{{ question.answers.length }}&nbsp;</td>
-        <td>&nbsp;<a href="#!/questions/{{question._id}}">Show</a> <a href="#!/questions/{{question._id}}/new_answer" >Answer</a>&nbsp;</td>
+        <td>{{ question.question }}</td>
+        <td>{{ question.answers.length }}</td>
+        <td><a href="#!/questions/{{question._id}}"><button type="button" class="btn" name="button">Show</button></a> <a href="#!/questions/{{question._id}}/new_answer" ><button type="button" class="btn" name="button">Answer</button></a></td>
       </tr>
     </tbody>
   </table>

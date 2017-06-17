@@ -1,9 +1,15 @@
-<div ng-controller="QuestionsController as QC">
+<div class="container-fluid" ng-controller="QuestionsController as QC">
 
-  <div ng-init="UC.check(); QC.index()">
-    <a href="#" ng-click="UC.logout()">Logout</a>
+  <div class="row" ng-init="UC.check(); QC.show()">
+    <a href="#!/"><button type="button" class="btn" name="button">Home</button></a>
   </div>
-  <hr>
+
+  <div class="row">
+    <a href="#" ng-click="UC.logout()"><button type="button" class="btn" name="button">Logout</button></a>
+  </div>
+
+
+
 
   <h1>New Question</h1>
 
@@ -12,11 +18,11 @@
   </ul>
 
   <form ng-submit="QC.create(QC.newQuestion)">
-    <label>Question <input type="text" ng-model="QC.newQuestion.question"></label><br><br>
-    <label>Description (optional) <input type="text" ng-model="QC.newQuestion.description"></label><br><br>
-    <input type="submit" value="Submit">
+    <label>Question <input type="text" class="form-control" ng-model="QC.newQuestion.question"></label><br><br>
+    <label>Description (optional) <input type="text" class="form-control" ng-model="QC.newQuestion.description"></label><br><br>
+    <input class="btn" type="submit" value="Submit">
   </form>
   <br>
-  <a href="#!/">Cancel</a>
+  <a href="#!/"><button type="button" class="btn" name="button">Cancel</button></a>
 
 </div>
