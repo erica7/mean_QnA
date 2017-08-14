@@ -1,3 +1,5 @@
+// Client-side controller
+
 app.controller('AnswersController', function(answerFactory, $routeParams, $location, $cookies){
   console.log('CS answers controller initialized');
   var self = this;

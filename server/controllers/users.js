@@ -1,3 +1,5 @@
+// Server-side controller
+
 console.log('SS users controller initialized');
 
 var mongoose = require('mongoose');

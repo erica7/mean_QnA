@@ -1,3 +1,5 @@
+// Server-side controller
+
 console.log('SS answers controller initialized');
 
 var mongoose = require('mongoose');
@@ -39,7 +41,7 @@ module.exports = {
         return res.json(err);
       }
       if(!answer){
-        return res.json({ 
+        return res.json({
           errors: "404 - Answer not found"
         })
       }

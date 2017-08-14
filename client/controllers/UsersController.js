@@ -1,3 +1,5 @@
+// Client-side controller
+
 app.controller('UsersController', function(userFactory, $location, $routeParams, $cookies){
   console.log('CS users controller initialized');
   var self = this;
@@ -17,6 +19,7 @@ app.controller('UsersController', function(userFactory, $location, $routeParams,
     });
   }
   self.create = function(newUser){
+    // 'reset' the two types of errors to empty arrays
     self.registrationErrors = [];
     self.loginErrors = [];
     if (newUser) {
@@ -43,6 +46,7 @@ app.controller('UsersController', function(userFactory, $location, $routeParams,
     }
   }
   self.login = function(checkUser){
+    // 'reset' the two types of errors to empty arrays
     self.loginErrors = [];
     self.registrationErrors = [];
     userFactory.login(checkUser, function(res){
@@ -59,13 +63,19 @@ app.controller('UsersController', function(userFactory, $location, $routeParams,
     })
   }
   self.logout = function(){
+    // remove the user id cookie
     $cookies.remove('userId');
+    // route to the login/registration page
     $location.url('/index');
   }
+  // check method is invoked on every partial HTML view except login/registration page to ensure user is logged in before showing data
   self.check = function(){
+    // call check method in the user factory
     userFactory.check(function(user){
+      // if a user object is returned, assign the object to a variable currentUser
       if (user) {
         self.currentUser = user;
+      // if a user is not found, route to the login/registration page
       } else {
         $location.url('/index');
       }

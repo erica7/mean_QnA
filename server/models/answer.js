@@ -1,3 +1,5 @@
+// Mongo models are created using mongoose ORM  
+
 var mongoose = require('mongoose');
 
 var AnswerSchema = new mongoose.Schema({

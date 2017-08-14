@@ -1,3 +1,7 @@
+// Routes
+// Include the server-side controllers to call their methods
+// Routes are constructed in RESTful architecture
+
 var User = require('./../controllers/users.js');
 var Question = require('./../controllers/questions.js');
 var Answer = require('./../controllers/answers.js');
